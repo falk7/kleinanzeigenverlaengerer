@@ -12,7 +12,7 @@ ${mail}=    meineMail@fake.com
 
 *** Tasks ***
 Verlaengere alle Anzeigen
-    Nutzer anmelden    ${pw}
+    Nutzer anmelden    ${pw}    ${mail}
     Anzeigen verlaengern 
     
 *** Keywords ***
@@ -24,7 +24,7 @@ Ebay Kleinanzeigen oeffnen
 
 Nutzer anmelden
     [Documentation]    Meldet Nutzer bei eBay Kleinanzeigen an
-    [Arguments]    ${pw}
+    [Arguments]    ${pw}    ${mail}
     Type Text        id=login-email        ${mail}
     Type Secret      id=login-password     ${pw}
     Click            id=login-submit
