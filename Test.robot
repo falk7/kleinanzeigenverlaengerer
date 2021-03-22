@@ -8,6 +8,7 @@ Test Setup     Ebay Kleinanzeigen oeffnen
 
 *** Variables ***
 ${pw}=    meinPasswort
+${mail}=    meineMail@fake.com
 
 *** Tasks ***
 Verlaengere alle Anzeigen
@@ -24,10 +25,10 @@ Ebay Kleinanzeigen oeffnen
 Nutzer anmelden
     [Documentation]    Meldet Nutzer bei eBay Kleinanzeigen an
     [Arguments]    ${pw}
-    Type Text        id=login-email        falk.altrock@gmail.com
+    Type Text        id=login-email        ${mail}
     Type Secret      id=login-password     ${pw}
     Click            id=login-submit
-    Get Text    id=user-email    contains     falk.altrock@gmail.com
+    Get Text    id=user-email    contains     ${mail}
 
 Anzeigen verlaengern 
     [Documentation]     Sucht alle verlängern-Buttons und klickt sie
