@@ -1,3 +1,7 @@
 venv
 results
 assets
+.vscode
+npm
+__pycache__
+credentials.py
