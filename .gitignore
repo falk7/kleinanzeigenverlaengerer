@@ -5,3 +5,4 @@ assets
 npm
 __pycache__
 credentials.py
+browser

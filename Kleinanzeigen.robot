@@ -9,7 +9,7 @@ Variables         credentials.py
 
 *** Tasks ***
 Verlaengere Alle Auslaufende Inserate
-    Nutzer Anmelden    ${PW}    ${MAIL}
+    Nutzer Anmelden    ${PW_EK}    ${MAIL}
     Anzeigen Verlaengern
 
 

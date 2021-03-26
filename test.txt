@@ -1,0 +1,9 @@
+03.04.21 15:30	FC Augsburg	1899 Hoffenheim	:	3.4	3.6	2.0
+	FSV Mainz 05	Arminia Bielefeld	:	1.91	3.5	3.8
+	Bayer 04 Leverkusen	FC Schalke 04	:	1.22	6.25	11.0
+	Borussia Dortmund	Eintracht Frankfurt	:	1.7	4.0	4.4
+	VfL Wolfsburg	1. FC Köln	:	1.53	4.0	6.0
+03.04.21 18:30	RB Leipzig	FC Bayern München	:	3.1	3.8	2.05
+03.04.21 20:30	Bor. Mönchengladbach	SC Freiburg	:	1.72	3.8	4.5
+04.04.21 15:30	VfB Stuttgart	Werder Bremen	:	1.83	3.6	4.0
+04.04.21 18:00	1. FC Union Berlin	Hertha BSC	:	2.35	3.3	2.9
