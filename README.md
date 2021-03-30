@@ -10,6 +10,9 @@ for information about browser library and how to initialize it see https://githu
 create credentials.py with your login information
 
 ```
-MAIL = "your@mail.com"
-PW = "yourpassword"
+MAIL_EK = "ebaykleinanzeigen@mail.com"
+PW_EK = "ebaykleinanzeigenpasswort"
+
+MAIL_KT = "kicktipp@mail.com"
+PW_KT = "kicktipp_passwort"
 ```

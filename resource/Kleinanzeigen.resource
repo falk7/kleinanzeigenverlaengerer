@@ -1,24 +1,17 @@
 *** Settings ***
 Library           Browser
-Library           DateTime
 Library           Collections
 Library           Reserved
-Task Setup        Ebay Kleinanzeigen Oeffnen
 Variables         credentials.py
-
-
-*** Tasks ***
-Verlaengere Alle Auslaufende Inserate
-    Nutzer Anmelden    ${PW_EK}    ${MAIL}
-    Anzeigen Verlaengern
 
 
 *** Keywords ***
 Ebay Kleinanzeigen Oeffnen
-    [Documentation]    Ruft eBay Kleinanzeigen in neuem Browser auf
-    New Browser    firefox    headless=false
-    New Context    viewport={'width': 1920, 'height': 1080}
+    [Documentation]    Ruft eBay Kleinanzeigen auf
     New Page    https://www.ebay-kleinanzeigen.de/m-einloggen.html
+
+User Anmelden Kleinanzeigen
+    Kleinanzeigen.Nutzer Anmelden    ${PW_EK}    ${MAIL_EK}
 
 Nutzer Anmelden
     [Documentation]    Meldet Nutzer bei eBay Kleinanzeigen an
@@ -38,11 +31,16 @@ Anzeigen Verlaengern
 Anzeige Verlaengern
     [Documentation]    Klicke verlängern Button wenn er aktiv ist
     [Arguments]    ${element}
-    ${classes}=    Get Classes    ${element}
-    ${is_active}=    evaluate  "is-disabled" not in ${classes}
-    IF    ${is_active}
-        Click    ${element}
-    ELSE
-        Log    ${element} nicht verlängerbar
-    END
+    Click    ${element}
+    Get Text    css=#extendBumpup > div > div.outcomemessage-success.l-container-row    contains    erfolgreich
+    Click    id=extend-bumpup-cancel
+    
+    ### Code unten wäre schicker, funktioniert wg. Bug in Library aber nicht
+    # ${classes}=    Get Classes    ${element}
+    # ${is_active}=    evaluate  "is-disabled" not in ${classes}
+    # IF    ${is_active}
+    #     Click    ${element}
+    # ELSE
+    #     Log    ${element} nicht verlängerbar
+    # END
 

@@ -2,13 +2,6 @@
 Library           Browser
 Library           Tipper
 Variables         credentials.py
-Suite Setup       Initialisieren
-
-
-*** Tasks ***
-Alle Spiele Tippen
-    Abendplanung Tippen
-    Heideletzlingen Tippen
 
 
 *** Keywords ***
@@ -22,8 +15,7 @@ Tipprunde Tippen
     [Arguments]    ${runde}
     Go To    https://www.kicktipp.de/${runde}/tippabgabe
     ${tipptabelle}=    Get Element    id=tippabgabeSpiele
-    ${text}=     Get Text    ${tipptabelle}
-    
+    ${text}=     Get Text    ${tipptabelle} 
     @{tipps}=    Tippaldatgames    ${text}
     @{fields}=   Get Elements      xpath=//input[contains(@id,"Tipp")]
 
@@ -33,17 +25,14 @@ Tipprunde Tippen
     END
     Take Screenshot    ${tipptabelle}
     Click    //*[@id="tippabgabeForm"]/div/div/div/input
-    
 
 Kicktipp Oeffnen
-    [Documentation]    Ruft Kicktipp in neuem Browser auf
-    New Browser    firefox    headless=false
-    New Context    viewport={'width': 1920, 'height': 1080}
+    [Documentation]    Ruft Kicktipp auf
     New Page    https://www.kicktipp.de/abendplanung123/tippabgabe
 
-Falk Anmelden
+User Anmelden Kicktipp
     [Documentation]     Mit Falks Nutzerdaten anmelden
-    Nutzer Anmelden    ${PW_KT}    ${MAIL}
+    Kicktip.Nutzer Anmelden    ${PW_KT}    ${MAIL_EK}
 
 Nutzer Anmelden
     [Documentation]    Meldet Nutzer an
@@ -54,6 +43,3 @@ Nutzer Anmelden
     Click    id=accept-choices
     Get Text    css=.messagebox.success    contains       Sie wurden erfolgreich eingeloggt
 
-Initialisieren
-    Kicktipp Oeffnen
-    Falk Anmelden
