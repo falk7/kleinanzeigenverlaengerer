@@ -32,8 +32,11 @@ Anzeige Verlaengern
     [Documentation]    Klicke verlängern Button wenn er aktiv ist
     [Arguments]    ${element}
     Click    ${element}
-    Get Text    css=#extendBumpup > div > div.outcomemessage-success.l-container-row    contains    erfolgreich
-    Click    id=extend-bumpup-cancel
+    ${popup_is_visible}=    Get Element State    id=extend-bumpup-cancel    state=visible
+    IF    ${popup_is_visible}     
+        Get Text    css=#extendBumpup > div > div.outcomemessage-success.l-container-row   contains    erfolgreich
+        Click    id=extend-bumpup-cancel 
+    END
     
     ### Code unten wäre schicker, funktioniert wg. Bug in Library aber nicht
     # ${classes}=    Get Classes    ${element}
