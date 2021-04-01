@@ -1,6 +1,6 @@
 # kleinanzeigenverlaengerer 
 
-loggt sich bei Ebay Kleinanzeigen ein und klickt alle "verlängern" Buttons die klickbar sind.
+Robot Framework Suite, die Ebay Kleinanzeigen Inserate verlängert und bei Kicktipp Spiele tippt
 
 # installation instructions
 
